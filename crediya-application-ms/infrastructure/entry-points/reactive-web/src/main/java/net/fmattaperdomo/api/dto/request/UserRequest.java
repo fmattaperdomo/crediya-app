@@ -24,5 +24,5 @@ public class UserRequest {
     private String address;
     private String phone;
     private BigDecimal baseSalary;
-    private String role;
+    private Integer roleId;
 }

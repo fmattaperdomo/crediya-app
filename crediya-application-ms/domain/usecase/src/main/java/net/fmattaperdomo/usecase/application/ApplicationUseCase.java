@@ -12,8 +12,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class ApplicationUseCase {
     private final ApplicationRepository applicationRepository;
-    private final StatusRepository statusRepository;
-    private final TypeLoanRepository typeLoanRepository;
+
     private final LoggerRepository log;
 
     public Mono<Application> saveApplication(Application application) {
@@ -28,8 +27,8 @@ public class ApplicationUseCase {
         return applicationRepository.getApplicationByApplicationId(applicationId);
     }
 
-    public Mono<Application> updateApplication(Application application) {
-        return applicationRepository.updateApplication(application);
+    public Mono<Application> updateApplication(Long appId, Application application) {
+        return applicationRepository.updateApplication(appId, application);
     }
 
     public Mono<Void> deleteById(Long applicationId) {

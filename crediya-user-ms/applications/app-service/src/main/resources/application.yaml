@@ -36,3 +36,11 @@ postgresql:
     schema: "public"
     username: "postgres"
     password: "Diosesamor12!"
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
+    use-root-path: true

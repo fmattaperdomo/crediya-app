@@ -23,9 +23,7 @@ public class ApplicationEntity {
     Integer deadline;
     String email;
     @Column(value = "id_status")
-    //StatusEntity statusId;
     Integer statusId;
     @Column(value = "id_type_loan")
-    //TypeLoanEntity typeLoanId;
     Integer typeLoanId;
 }

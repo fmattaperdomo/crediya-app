@@ -32,16 +32,16 @@ public class ApplicationReactiveRepositoryAdapter extends ReactiveAdapterOperati
 
     @Override
     public Mono<Application> getApplicationByApplicationId(Long applicationId) {
-        return null;
+        return super.findById(applicationId);
     }
 
     @Override
-    public Mono<Application> updateApplication(Application application) {
-        return null;
+    public Mono<Application> updateApplication(Long appId, Application application) {
+        return super.save(application);
     }
 
     @Override
     public Mono<Void> deleteById(Long applicationId) {
-        return null;
+        return super.repository.deleteById(applicationId);
     }
 }

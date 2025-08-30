@@ -26,11 +26,11 @@ public class WebClientConfiguration {
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultHeader(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
                 .filter(ExchangeFilterFunction.ofRequestProcessor(clientRequest -> {
-                    log.info("Client request: {}, {}", clientRequest.method(), clientRequest.url());
+                    log.info("WC: Client request: {}, {}", clientRequest.method(), clientRequest.url());
                     return Mono.just(clientRequest);
                 }))
                 .filter(ExchangeFilterFunction.ofResponseProcessor(clientResponse -> {
-                    log.info("Client response: {}, {}", clientResponse.statusCode(), clientResponse.headers());
+                    log.info("WC: Client response: {}, {}", clientResponse.statusCode(), clientResponse.headers());
                     return Mono.just(clientResponse);
                 }));
     }
